@@ -118,7 +118,7 @@ async def main_async(gucci_urls):
 				"bag": "ba", "travel": "ba"
 			}
 
-			json_data = [{"index": {"_index": "luxury"}}]
+			json_data = []
 
 			for result in results:
 				if result is not None:
@@ -126,6 +126,7 @@ async def main_async(gucci_urls):
 					if data_list:
 						for item in data_list:
 							pcode = pcode_mapping.get(category, "unknown")
+							json_data.append({"index": {"_index": "luxury"}})
 							formatted_item = {
 								'pname': item['name'],
 								'brand': "GUCCI",
